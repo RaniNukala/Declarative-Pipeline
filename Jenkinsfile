@@ -11,17 +11,18 @@ pipeline {
     stage('Continuous Build') {
       steps {
         try {
-				    //main code that might fail 
+			  //main code that might fail 
 	          // Building executable application
-        		sh 'mvn package'
+        	  sh 'mvn package'
         }
-        Catch (Exception e) {
-				    //handles the error
-            echo “Build failed…”
+        catch (Exception e) {
+			  //handles the error
+              echo “Build failed…”
         }
         finally {
-            // always runs whether it success or failure of try block
-            echo “cleaning up workspace”
+              // always runs whether it success or failure of try block
+              echo “cleaning up workspace”
+			
         }
       }
     }
