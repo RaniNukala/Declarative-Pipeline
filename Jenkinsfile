@@ -14,8 +14,19 @@ pipeline {
     {
       steps 
       {
-        // Building executable application
-        sh 'mvn package'
+        try{
+				    //main code that might fail 
+	          // Building executable application
+        		sh 'mvn package'
+        }
+        Catch (Exception e){
+				    //handles the error
+            echo “Build failed…”
+        }
+        finally{
+            // always runs whether it success or failure of try block
+            echo “cleaning up workspace"
+        }
       }
     }
 
