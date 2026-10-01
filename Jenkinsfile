@@ -18,11 +18,11 @@ pipeline {
            }
            catch (Exception e) {
 			  //handles the error
-              echo “Build failed…”
+              echo "Build failed…"
            }
            finally {
               // always runs whether it success or failure of try block
-              echo “cleaning up workspace”
+              echo "cleaning up workspace"
            }
 		   // Building executable application
            sh 'mvn package'
