@@ -19,6 +19,8 @@ pipeline {
            catch (Exception e) {
 			  //handles the error
               echo "Build failed…"
+			  //Error email notification to Build Team
+			  mail bcc: '', body: 'CI CD & CD Process, Maven Build has been failed', cc: 'raninukala2221@gmail.com', from: '', replyTo: '', subject: 'Build Failed', to: 'sangavirani321@gmail.com'
            }
            finally {
               // always runs whether it success or failure of try block
