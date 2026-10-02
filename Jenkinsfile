@@ -49,7 +49,6 @@ pipeline {
       }
     }
 
-	//Continuous Deployment
     stage('Continuous Deploy') {
       steps {
         // Application deploying on live servers
