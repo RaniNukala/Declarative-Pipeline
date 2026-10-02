@@ -17,7 +17,7 @@ pipeline {
         	  sh 'mvn package'
            }
            catch (Exception e) {
-			  //handles the error
+			  //handles the error 
               echo "Build failed…"
 			  //Error email notification to Build Team
 			  mail bcc: '', body: 'CI CD & CD Process, Maven Build has been failed', cc: 'raninukala2221@gmail.com', from: '', replyTo: '', subject: 'Build Failed', to: 'sangavirani321@gmail.com'
@@ -49,6 +49,7 @@ pipeline {
       }
     }
 
+	//Continuous Deployment
     stage('Continuous Deploy') {
       steps {
         // Application deploying on live servers
