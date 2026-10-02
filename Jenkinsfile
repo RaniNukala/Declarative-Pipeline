@@ -14,7 +14,7 @@ pipeline {
        		try {
 			  //main code that might fail 
 	          // Building executable application
-        	  sh 'mvn packag'
+        	  sh 'mvn package'
            }
            catch (Exception e) {
 			  //handles the error 
