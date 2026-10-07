@@ -35,7 +35,7 @@ pipeline {
     stage('Continuous Delivery') {
       steps {
         // To deliver application on a QA Server
-        deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'admin-test', path: '', url: 'http://10.10.10.253:8080/')], contextPath: 'testapp', war: '**/*.war'
+        deploy adapters: [tomcat10(alternativeDeploymentContext: '', credentialsId: 'admin-test', path: '', url: 'http://10.10.10.5:8080/')], contextPath: 'testapp', war: '**/*.war'
       }
     }
     
@@ -52,7 +52,7 @@ pipeline {
     stage('Continuous Deploy') {
       steps {
         // Application deploying on live servers
-        deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'prod-admin', path: '', url: 'http://10.10.10.247:8080/')], contextPath: 'prodapp', war: '**/*.war'
+        deploy adapters: [tomcat10(alternativeDeploymentContext: '', credentialsId: 'prod-admin', path: '', url: 'http://10.10.10.6:8080/')], contextPath: 'prodapp', war: '**/*.war'
       }
     }
   }
